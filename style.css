@@ -165,58 +165,49 @@ canvas.fade {
 /* =========================
    ABOUT ME
 ========================= */
-.AboutMe {
+/* ABOUT SECTION */
+
+.about-container {
   display: flex;
-  gap: clamp(40px, 6vw, 80px);
-
-  padding: clamp(60px, 10vw, 150px);
-  margin-top: 100px;
-
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 80px 20px;
   max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.AboutMePhoto img {
-  width: min(80vw, 350px);
-  height: auto;
-
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.312);
+  margin: 0 auto;
 }
 
-.AboutMeText1 {
-  font-size: clamp(16px, 2vw, 20px);
+/* Text */
+
+.about-text {
+  flex: 1;
+  max-width: 500px;
 }
 
-.AboutMeText2 {
-  padding-top: 20px;
-  max-width: 600px;
+.about-text h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
 }
 
-.AboutMeText3 {
+.about-text p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Image */
+
+.about-image {
+  flex: 1;
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding-top: 30px;
+  justify-content: center;
 }
 
-.AboutMeText3 span {
-  display: inline-block;
-
-  background: #ea73bf;
-  color: #fffefe;
-
-  padding: 8px 12px;
-  border-radius: 20px;
-  font-size: 14px;
-
-  cursor: pointer;
-  transition: background 0.4s ease;
+.about-image img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 10px;
 }
 
-.AboutMeText3 span:hover {
-  background: #111;
-}
 
 /* =========================
    CONTACT
@@ -275,17 +266,24 @@ a {
 /* =========================
    MOBILE STACKING
 ========================= */
+
+
 @media (max-width: 768px) {
-
-  .AboutMe {
+  .about-container {
     flex-direction: column;
-    align-items: center;
     text-align: center;
-    padding: 120px 30px 60px;
+    padding: 60px 20px;
   }
-
-  .AboutMeText2 {
-    max-width: 90%;
+  .about-text {
+    max-width: 100%;
   }
-
+  .about-text h1 {
+    font-size: 34px;
+  }
+  .about-text p {
+    font-size: 16px;
+  }
+  .about-image img {
+    max-width: 260px;
+  }
 }
