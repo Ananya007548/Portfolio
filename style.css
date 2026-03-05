@@ -101,9 +101,8 @@ canvas.fade {
   pointer-events: none;
 }
 
-
 /* =========================
-   GLOBAL NAVBAR
+   GLOBAL NAVBAR (MATCH PROJECTS)
 ========================= */
 .nav {
   position: fixed;
@@ -112,23 +111,14 @@ canvas.fade {
   transform: translateX(-50%);
 
   display: flex;
+  justify-content: center;
+  align-items: center;
+
   gap: clamp(18px, 5vw, 36px);
+  flex-wrap: nowrap;          /* prevent wrapping */
+  white-space: nowrap;        /* force single line */
 
   z-index: 10;
-
-  opacity: 1;
-  pointer-events: auto;
-  transition: opacity 1s ease;
-}
-
-#home .nav {
-  opacity: 0;
-  pointer-events: none;
-}
-
-#home .nav.show {
-  opacity: 1;
-  pointer-events: auto;
 }
 
 .nav a {
