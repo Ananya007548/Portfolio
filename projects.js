@@ -10,7 +10,27 @@ let targetRotation = 0;
 window.addEventListener("wheel", e => {
   targetRotation += e.deltaY * 0.4;
 });
+let startY = 0;
+let isTouching = false;
 
+window.addEventListener("touchstart", (e) => {
+  startY = e.touches[0].clientY;
+  isTouching = true;
+}, { passive: true });
+
+window.addEventListener("touchmove", (e) => {
+  if (!isTouching) return;
+
+  const currentY = e.touches[0].clientY;
+  const deltaY = startY - currentY;
+
+  targetRotation += deltaY * 0.6;
+  startY = currentY;
+}, { passive: true });
+
+window.addEventListener("touchend", () => {
+  isTouching = false;
+});
 function animate() {
   rotation += (targetRotation - rotation) * 0.08;
 
