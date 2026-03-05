@@ -13,13 +13,10 @@
 html, body {
   width: 100%;
   height: 100%;
-  padding-bottom: 120px;
   background: rgb(255, 255, 255);
   font-family: Helvetica, Arial, sans-serif;
 
-  overflow-x: hidden;
-  overflow-y: auto;
-
+  overflow: hidden;
   overscroll-behavior: none;
   touch-action: manipulation;
 }
@@ -105,7 +102,7 @@ canvas.fade {
 }
 
 /* =========================
-   GLOBAL NAVBAR
+   GLOBAL NAVBAR (MATCH PROJECTS)
 ========================= */
 .nav {
   position: fixed;
@@ -114,13 +111,14 @@ canvas.fade {
   transform: translateX(-50%);
 
   display: flex;
+  justify-content: center;
+  align-items: center;
+
   gap: clamp(18px, 5vw, 36px);
+  flex-wrap: nowrap;
+  white-space: nowrap;
 
   z-index: 10;
-
-  opacity: 1;
-  pointer-events: auto;
-  transition: opacity 1s ease;
 }
 
 .nav a {
@@ -166,41 +164,56 @@ canvas.fade {
 /* =========================
    ABOUT ME
 ========================= */
-.about-container {
+.AboutMe {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  padding: 80px 20px;
-  max-width: 1100px;
-  margin: 0 auto;
+  gap: clamp(40px, 6vw, 80px);
+
+  padding: clamp(60px, 10vw, 150px);
+  margin-top: 70px;
+
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.about-text {
-  flex: 1;
-  max-width: 500px;
+.AboutMePhoto img {
+  width: min(80vw, 350px);
+  height: auto;
+
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.312);
 }
 
-.about-text h1 {
-  font-size: 42px;
-  margin-bottom: 20px;
+.AboutMeText1 {
+  font-size: clamp(16px, 2vw, 20px);
 }
 
-.about-text p {
-  font-size: 18px;
-  line-height: 1.6;
+.AboutMeText2 {
+  padding-top: 20px;
+  max-width: 600px;
 }
 
-.about-image {
-  flex: 1;
+.AboutMeText3 {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 30px;
 }
 
-.about-image img {
-  width: 100%;
-  max-width: 350px;
-  border-radius: 10px;
+.AboutMeText3 span {
+  display: inline-block;
+
+  background: #ea73bf;
+  color: #fffefe;
+
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+
+  cursor: pointer;
+  transition: background 0.4s ease;
+}
+
+.AboutMeText3 span:hover {
+  background: #111;
 }
 
 /* =========================
@@ -258,41 +271,12 @@ a {
 }
 
 /* =========================
-   MOBILE FIXES ONLY
+   MOBILE STACKING
 ========================= */
-
 @media (max-width: 768px) {
-
-  /* prevent skills being overlapped */
+  .AboutMe,
   .Contact {
-    margin-bottom: 140px;
-  }
-
-  /* keep navbar stable on phone */
-  .nav {
-    top: 30px;
-  }
-
-  .about-container {
     flex-direction: column;
     text-align: center;
-    padding: 60px 20px;
   }
-
-  .about-text {
-    max-width: 100%;
-  }
-
-  .about-text h1 {
-    font-size: 34px;
-  }
-
-  .about-text p {
-    font-size: 16px;
-  }
-
-  .about-image img {
-    max-width: 260px;
-  }
-
 }
