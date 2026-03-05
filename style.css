@@ -13,6 +13,7 @@
 html, body {
   width: 100%;
   height: 100%;
+  padding-bottom: 120px;
   background: rgb(255, 255, 255);
   font-family: Helvetica, Arial, sans-serif;
 
@@ -123,7 +124,7 @@ canvas.fade {
 }
 
 .nav a {
-  font-size: 0.8rem;
+  font-size: 0.9rem;   /* slightly increased so it doesn't shrink on mobile */
   letter-spacing: 1px;
   text-transform: uppercase;
   text-decoration: none;
@@ -165,8 +166,6 @@ canvas.fade {
 /* =========================
    ABOUT ME
 ========================= */
-/* ABOUT SECTION */
-
 .about-container {
   display: flex;
   align-items: center;
@@ -176,8 +175,6 @@ canvas.fade {
   max-width: 1100px;
   margin: 0 auto;
 }
-
-/* Text */
 
 .about-text {
   flex: 1;
@@ -194,8 +191,6 @@ canvas.fade {
   line-height: 1.6;
 }
 
-/* Image */
-
 .about-image {
   flex: 1;
   display: flex;
@@ -208,7 +203,6 @@ canvas.fade {
   border-radius: 10px;
 }
 
-
 /* =========================
    CONTACT
 ========================= */
@@ -219,6 +213,8 @@ canvas.fade {
 
   gap: clamp(40px, 6vw, 80px);
   padding: clamp(80px, 12vw, 200px) 5vw;
+
+  margin-bottom: 140px; /* prevents footer overlap */
 }
 
 .ContactText1 {
@@ -267,23 +263,37 @@ a {
    MOBILE STACKING
 ========================= */
 
-
 @media (max-width: 768px) {
+
+  .nav {
+    top: 30px; /* fixes navbar spacing on phone */
+    gap: 24px;
+  }
+
+  .nav a {
+    font-size: 0.9rem;
+  }
+
   .about-container {
     flex-direction: column;
     text-align: center;
     padding: 60px 20px;
   }
+
   .about-text {
     max-width: 100%;
   }
+
   .about-text h1 {
     font-size: 34px;
   }
+
   .about-text p {
     font-size: 16px;
   }
+
   .about-image img {
     max-width: 260px;
   }
+
 }
