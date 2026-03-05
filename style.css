@@ -124,7 +124,7 @@ canvas.fade {
 }
 
 .nav a {
-  font-size: 0.9rem;   /* slightly increased so it doesn't shrink on mobile */
+  font-size: 0.8rem;
   letter-spacing: 1px;
   text-transform: uppercase;
   text-decoration: none;
@@ -213,8 +213,6 @@ canvas.fade {
 
   gap: clamp(40px, 6vw, 80px);
   padding: clamp(80px, 12vw, 200px) 5vw;
-
-  margin-bottom: 140px; /* prevents footer overlap */
 }
 
 .ContactText1 {
@@ -260,18 +258,19 @@ a {
 }
 
 /* =========================
-   MOBILE STACKING
+   MOBILE FIXES ONLY
 ========================= */
 
 @media (max-width: 768px) {
 
-  .nav {
-    top: 30px; /* fixes navbar spacing on phone */
-    gap: 24px;
+  /* prevent skills being overlapped */
+  .Contact {
+    margin-bottom: 140px;
   }
 
-  .nav a {
-    font-size: 0.9rem;
+  /* keep navbar stable on phone */
+  .nav {
+    top: 30px;
   }
 
   .about-container {
