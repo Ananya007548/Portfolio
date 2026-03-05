@@ -187,7 +187,9 @@ body {
   left: 50%;
 
   transform: translateX(-50%) translateY(20px);
-
+  
+   white-space: nowrap;
+   
   font-size: 0.8rem;
   letter-spacing: 1px;
   text-transform: uppercase;
